@@ -1,0 +1,38 @@
+<html>
+<body>
+<script>
+    var container = document.createElement("div")
+    document.body.appendChild(container)
+
+    for (var i = 0; i < 20; i++) {
+        var ball = document.createElement("div")
+
+        ball.style.height = ball.style.width = "20px";
+        ball.style.borderRadius = "50%";
+        ball.style.backgroundColor = "rgb(" + random(255) + "," + random(255) + "," + random(255) + ")"
+
+        ball.style.position = "absolute"
+        ball.style.left = random(400) + "px"
+        ball.style.top = random(400) + "px"
+
+        container.appendChild(ball)
+
+    }
+
+    setInterval(function(){
+        var balls = container.children;
+        for(var i=0; i < balls.length; i++){
+            balls[i].style.backgroundColor = "rgb("+random(255) +","+random(255) +","+random(255) +")";
+        }
+    }, 150);
+
+
+    function random(num) {
+        return Math.floor(Math.random() * num)
+    }
+
+
+
+</script>
+</body>
+</html>
