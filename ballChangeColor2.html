@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>changeColor</title>
+</head>
+<body>
+
+<div id="ball" ;
+     style="background-color:rgb(0, 255, 0);width: 20px;height: 20px;border-radius: 50%; position: absolute;left: 100px;top: 100px;"></div>
+<script>
+    setInterval(function () {
+        var ball = document.getElementById("ball");
+        ball.style.backgroundColor = "rgb(" + Math.floor(Math.random() * 255) + "," + Math.floor(Math.random() * 255) + "," + Math.floor(Math.random() * 255) + ")";
+        // console.log(
+        //     "rgb(" + Math.random() * 255 + "," + Math.random() * 255 + "," + Math.random() * 255 + ")"
+        // );
+        var x = parseInt(ball.style.left.slice(0, -2));
+        // flag 형식 => bool문과 같은 처리
+        ball.style.left = x + parseInt(10) + "px";
+        // 숫자 만들기
+        // 숫자 더하기
+        // 문자 만들기
+
+
+        // console.log(parseInt(ball.style.left.slice(0,-2)) + parseInt(1) + "px");
+        // "rgb(" + Math.floor(Math.random() * 255) + "," + Math.floor(Math.random() * 255) + "," + Math.floor(Math.random() * 255) + ")"
+    }, 10);
+</script>
+</body>
+</html>

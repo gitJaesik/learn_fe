@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>JS Bin</title>
+</head>
+<body onload="onclick=_onCreate()">
+<script>
+    function _onCreate(){
+        setTimeout(function(){
+
+            //create button1
+            var selectButton = document.createElement('button');
+            selectButton.innerHTML = "셀렉트";
+            selectButton.setAttribute('onclick','_createSelect()');
+            //create button2
+            var checkButton = document.createElement('button');
+            checkButton.innerHTML = "체크";
+            checkButton.setAttribute('onclick','_createCheckBox()');
+            //create button3
+            var textButton = document.createElement('button');
+            textButton.innerHTML = "텍스트";
+            textButton.setAttribute('onclick','_createInputText()');
+            //create wrapper div
+            var wrapper = document.createElement('div');
+            document.body.appendChild(wrapper);
+            wrapper.appendChild(selectButton);
+            wrapper.appendChild(checkButton);
+            wrapper.appendChild(textButton);
+        },500);
+    }
+    var index = 1; //index in selectbox
+    var selectBox, divCheck, divText;
+    function _createSelect(){
+        if(document.getElementById('divSelect') == null){
+            var divSelect = document.createElement('div');
+            divSelect.setAttribute('id','divSelect');
+            document.body.appendChild(divSelect);
+            selectBox = document.createElement('select');
+            divSelect.appendChild(selectBox);
+        }
+        var option = document.createElement('option');
+        option.innerHTML = "옵션"+ index++;
+        selectBox.appendChild(option);
+    }
+    function _createCheckBox(){
+        if(document.getElementById('divCheck') == null){
+            console.log('null');
+            divCheck = document.createElement('div');
+            divCheck.setAttribute('id','divCheck');
+            document.body.appendChild(divCheck);
+        }
+        var checkbox = document.createElement('input');
+        checkbox.setAttribute('type','checkbox');
+        divCheck.appendChild(checkbox);
+    }
+    function _createInputText(){
+        if(document.getElementById('divText') == null){
+            divText = document.createElement('div');
+            divText.setAttribute('id','divText');
+            document.body.appendChild(divText);
+        }
+        var inputText = document.createElement('input');
+        inputText.setAttribute('type','text');
+        divText.appendChild(inputText);
+    }
+</script>
+</body>
+</html>

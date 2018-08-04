@@ -29,6 +29,8 @@ Material Design Lite	https://getmdl.io/
 
 ## TODO  
 공만들기 자바스크립트 구현  
+ - html style 속성에 대해서 알 수 있다.  
+ - JavaScript 문법에 익숙해질 수 있다.  
 nodejs로 블로그 만들기 (단계별로 어떻게 할지 고려)  
 
 
